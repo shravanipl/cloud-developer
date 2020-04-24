@@ -7,6 +7,7 @@ const c = config.dev;
 var credentials = new AWS.SharedIniFileCredentials({profile: 'default'});
 AWS.config.credentials = credentials;
 
+//Instantiate new S3 service
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
   region: c.aws_region,

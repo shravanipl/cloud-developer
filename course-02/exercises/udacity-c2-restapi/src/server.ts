@@ -9,7 +9,7 @@ import { V0MODELS } from './controllers/v0/model.index';
 
 (async () => {
   await sequelize.addModels(V0MODELS);
-  await sequelize.sync();
+  await sequelize.sync(); //To keep in sync with DB and models / objects
 
   const app = express();
   const port = process.env.PORT || 8080; // default port to listen
@@ -23,6 +23,7 @@ import { V0MODELS } from './controllers/v0/model.index';
     next();
   });
 
+  
   app.use('/api/v0/', IndexRouter)
 
   // Root URI call
